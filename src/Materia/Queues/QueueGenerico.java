@@ -1,23 +1,22 @@
 package Materia.Queues;
-
-
 import java.util.NoSuchElementException;
-import Materia.Models.Node;
-public class Queues {
-    private Node front; // Nodo al frente de la cola
-    private Node rear;  // Nodo al final de la cola
-    private int size;   // Tamaño de la cola
+import Materia.Models.NodeGeneric;
+
+public class QueueGenerico<T> {
+    private NodeGeneric<T> front; // Nodo al frente de la cola
+    private NodeGeneric<T> rear;  // Nodo al final de la cola
+    private int size;             // Tamaño de la cola
 
     // Constructor: Inicializar cola vacía
-    public Queues() {
+    public QueueGenerico() {
         this.front = null;
         this.rear = null;
         this.size = 0;
     }
 
     // Método para encolar nodos
-    public void enqueue(int value) {
-        Node newNode = new Node(value);
+    public void enqueue(T value) {
+        NodeGeneric<T> newNode = new NodeGeneric<>(value);
         if (isEmpty()) {
             front = newNode;
             rear = newNode;
@@ -29,11 +28,11 @@ public class Queues {
     }
 
     // Método para desencolar nodos
-    public int dequeue() {
+    public T dequeue() {
         if (isEmpty()) {
             throw new NoSuchElementException("La cola está vacía");
         }
-        int value = front.getValue();
+        T value = front.getValue();
         front = front.getNext();
         if (front == null) {
             rear = null;
@@ -43,7 +42,7 @@ public class Queues {
     }
 
     // Devuelve el valor del nodo al frente de la cola sin quitarlo
-    public int peek() {
+    public T peek() {
         if (isEmpty()) {
             throw new NoSuchElementException("La cola está vacía");
         }
@@ -62,7 +61,7 @@ public class Queues {
 
     // Método para imprimir todos los elementos de la cola
     public void printQueue() {
-        Node current = front;
+        NodeGeneric<T> current = front;
         System.out.print("Cola: ");
         while (current != null) {
             System.out.print(current.getValue() + " ");
