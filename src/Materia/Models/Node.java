@@ -1,15 +1,13 @@
 package Materia.Models;
 
 public class Node {
-    int value;
-    Node next;
+
+    private int value;
+    private Node next;
+
     public Node(int value) {
         this.value = value;
         this.next = null;
-    }
-    @Override
-    public String toString() {
-        return "Node [value=" + value + ", next=" + next + "]";
     }
     public int getValue() {
         return value;
@@ -23,9 +21,10 @@ public class Node {
     public void setNext(Node next) {
         this.next = next;
     }
-    public void
 
+    public String toString() {
+        return "Nodo { " + " value = " + value + " }";
+    }
     
 
-    
 }
