@@ -60,7 +60,7 @@ En este ejercicio, se utiliza una pila temporal (`tempStack`) para almacenar los
 ## Cómo ejecutar el proyecto
 
 1. **Clonar el repositorio**:
-git clone https://github.com/tu-usuario/repositorio.git
+git clone https://github.com/Jannethperalta/icc-est-u2-estructuras-Lineales.git
 
 
 2. **Compilar y ejecutar el código**:
