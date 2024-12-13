@@ -1,7 +1,7 @@
 package Materia.Queues;
 
-import java.util.NoSuchElementException;
 import Materia.Models.Node;
+import java.util.NoSuchElementException;
 
 public class Queue {
 

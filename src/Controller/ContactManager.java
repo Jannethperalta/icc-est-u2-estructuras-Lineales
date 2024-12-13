@@ -36,9 +36,10 @@ public class ContactManager {
             return; //No se encontro un contacto con ese nombre
 
         //Caso 1 que el contacto sea la Head o cabeza
-        if (((String) current.getValue().getName()).equalsIgnoreCase(name)) {
+        if (((String) current.getValue().getName()).equalsIgnoreCase(name)){
             conctacts.setHead(conctacts.getHead().getNext());
             conctacts.setSize(conctacts.getSize() - 1);
+            
             return;
         }
         

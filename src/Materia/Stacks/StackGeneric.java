@@ -1,7 +1,7 @@
 package Materia.Stacks;
 
-import java.util.EmptyStackException;
 import Materia.Models.NodeGeneric;
+import java.util.EmptyStackException;
 
 public class StackGeneric<T> {
 

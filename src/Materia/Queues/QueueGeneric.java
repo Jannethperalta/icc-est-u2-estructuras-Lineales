@@ -1,8 +1,7 @@
 package Materia.Queues;
 
-import java.util.NoSuchElementException;
-
 import Materia.Models.NodeGeneric;
+import java.util.NoSuchElementException;
 
 public class QueueGeneric<T> {
 

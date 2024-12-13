@@ -2,25 +2,42 @@
 
 
 import Controller.MenuController;
+import Ejercicio_01_sign.SignValidator;
+import Ejercicio_02_sorting.StackSorter;
 import Materia.Queues.Queue;
 import Materia.Queues.QueueGeneric;
-import Materia.Stacks.Stack;
-import Materia.Stacks.StackGeneric;
+
 import Models.Pantalla;
+
+import Ejercicio_01_sign.*;
+import Ejercicio_02_sorting.*;
+import Materia.Stacks.StackGeneric;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        runContactMannager();
+        //runContactMannager();
         //runStack();
         //runStackGeneric();
         //runQueue();
         //runQueueGeneric();
 
+        System.out.println(" ==========================================================");
+               System.out.println("Validación de Signos");
+         System.out.println(" ==========================================================");
+                runEjercicio1();
+         System.out.println(" ==========================================================");
+        System.out.println(" ==========================================================");
+        System.out.println(" Ordenar un Stack");
+        System.out.println(" ==========================================================");
+               
+                runEjercicio2();
+         System.out.println(" ==========================================================");
+
     }
 
     public static void runStack() {
         //Instanciar la clase
-        Stack stack = new Stack();
+        /*Stack stack = new Stack();
         
 
         //Agregar elementos a la pila
@@ -44,7 +61,7 @@ public class App {
         System.out.println("Cima   -> "+ stack.peek());
         System.out.println("Retirar-> "+ stack.pop());
         System.out.println("Cima   -> "+ stack.peek());
-
+*/
         
     }
     public static void runStackGeneric() {
@@ -107,5 +124,37 @@ public class App {
         MenuController menuController = new MenuController();
         menuController.showMenu();
     }
+
+    private static void runEjercicio1() {
+                String input1 = "([]){}";
+                String input2 = "({)}";
+
+                // Validar los signos
+                System.out.println("¿Es válido '([]){}'? " + SignValidator.isValid(input1)); // true
+                System.out.println("¿Es válido '({)}'? " + SignValidator.isValid(input2)); // false
+        }
+
+        private static void runEjercicio2() {
+
+                StackGeneric<Integer> stack = new StackGeneric<>();
+
+                // Agregar elementos a la pila
+                stack.push(2);
+                stack.push(4);
+                stack.push(1);
+                stack.push(5);
+
+                // Mostrar la pila antes de ordenar
+                System.out.println("Pila antes de ordenar:");
+                stack.printStack();;
+
+                // Ordenar la pila
+                StackSorter.sort(stack);
+
+                // Mostrar la pila después de ordenar
+                System.out.println("Pila después de ordenar:");
+                stack.printStack();;
+
+        }
 
 }
